@@ -27,7 +27,34 @@ footer {
 	background-color: gray;
 }
 
+a {
+	text-decoration: none;
+}
+
 .img-with-border {
 	border: 2px solid yellow;
 }
 
+.zoom-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.arrow {
+	font-size: 100px;
+	position: absolute;
+	top: 150px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.arrow-left {
+	left: 0;
+}
+
+.arrow-right {
+	right: 0;
+}

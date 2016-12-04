@@ -7,7 +7,7 @@ var currentIndex = 0;
 imgArray.forEach(function ($image) {
     $image.addEventListener('click', function (ev) {
         ev.preventDefault();
-        document.querySelector('.zoom-container').parentNode.className = 'preview-container';
+        showPreviewContainer();
         previewImage($image);
         document.addEventListener('keydown', bindArrows)
     })
@@ -75,6 +75,16 @@ function getNextImage() {
 }
 
 
+function showPreviewContainer() {
+    document.querySelector('.zoom-container').parentNode.className = 'preview-container';
+}
+
+
+function hidePreviewContainer() {
+    document.querySelector('.zoom-container').parentNode.className = 'empty-preview-container';
+}
+
+
 document.querySelector('.arrow-left').addEventListener('click', function(){
     previewPrevImage();
 });
@@ -86,6 +96,6 @@ document.querySelector('.arrow-right').addEventListener('click', function(){
 
 
 document.querySelector('.close-preview').addEventListener('click', function(){
-    document.querySelector('.zoom-container').parentNode.className = 'empty-preview-container';
-    document.removeEventListener('keydown', bindArrows)
+    hidePreviewContainer();
+    document.removeEventListener('keydown', bindArrows);
 });

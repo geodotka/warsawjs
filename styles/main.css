@@ -16,8 +16,18 @@ main {
 main ul li {
 	list-style: none;
 	display: inline-block;
+	margin: 5px;
+}
+
+main ul li a {
+	outline: none;
 }
 
 footer {
 	background-color: gray;
 }
+
+.img-with-border {
+	border: 2px solid yellow;
+}
+

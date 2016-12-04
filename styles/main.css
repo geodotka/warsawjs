@@ -12,6 +12,12 @@ header {
 
 main {
 	background-color: black;
+	display: flex;
+	justify-content: center;
+}
+
+main ul {
+	width: 680px;
 }
 
 main ul li {
@@ -22,6 +28,10 @@ main ul li {
 
 main ul li a {
 	outline: none;
+}
+
+main ul li img {
+	border: 1px solid #ffffff;
 }
 
 footer {

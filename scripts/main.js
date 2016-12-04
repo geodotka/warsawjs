@@ -15,10 +15,11 @@ imgArray.forEach(function ($image) {
 
 
 function bindArrows(ev) {
-    if (ev.keyCode == 39) {
-        previewNextImage();
-    } else if (ev.keyCode == 37) {
-        previewPrevImage()
+    switch (ev.keyCode){
+        case 27: hidePreviewContainer(); break;
+        case 37: previewPrevImage(); break;
+        case 39:  previewNextImage(); break;
+        default: break;
     }
 }
 
@@ -82,6 +83,7 @@ function showPreviewContainer() {
 
 function hidePreviewContainer() {
     document.querySelector('.zoom-container').parentNode.className = 'empty-preview-container';
+    document.removeEventListener('keydown', bindArrows);
 }
 
 
@@ -97,5 +99,4 @@ document.querySelector('.arrow-right').addEventListener('click', function(){
 
 document.querySelector('.close-preview').addEventListener('click', function(){
     hidePreviewContainer();
-    document.removeEventListener('keydown', bindArrows);
 });

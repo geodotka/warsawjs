@@ -1,0 +1,23 @@
+body {
+	/*background-color: black;*/
+	color: white;
+	font-family: 'Aref Ruqaa', serif;
+	margin: 0;
+}
+
+header {
+	background-color: gray;
+}
+
+main {
+	background-color: black;
+}
+
+main ul li {
+	list-style: none;
+	display: inline-block;
+}
+
+footer {
+	background-color: gray;
+}

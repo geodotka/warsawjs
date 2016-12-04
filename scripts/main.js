@@ -7,6 +7,7 @@ var currentIndex = 0;
 imgArray.forEach(function ($image) {
     $image.addEventListener('click', function (ev) {
         ev.preventDefault();
+        document.querySelector('.zoom-container').parentNode.className = 'preview-container';
         previewImage($image);
     })
 });
@@ -61,4 +62,9 @@ document.querySelector('.arrow-left').addEventListener('click', function(){
 document.querySelector('.arrow-right').addEventListener('click', function(){
     var $nextImage = getNextImage();
     previewImage($nextImage)
+});
+
+
+document.querySelector('.close-preview').addEventListener('click', function(){
+    document.querySelector('.zoom-container').parentNode.className = 'empty-preview-container';
 });

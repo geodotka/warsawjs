@@ -5,6 +5,7 @@
 	<title>Galeria zdjęć</title>
 	<link rel="stylesheet" href="styles/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">
+	 <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
 </head>
 <body>
 	<header>
@@ -45,10 +46,13 @@
 			</li>
 		</ul>
 
-		<div class="zoom-container">
-			<span class="arrow arrow-left">❰</span>
-			<div class="image-container"></div>
-			<span class="arrow arrow-right">❱</span>
+		<div class="empty-preview-container">
+			<div class="zoom-container">
+				<span class="arrow arrow-left"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
+				<div class="image-container"></div>
+				<span class="arrow arrow-right"><i class="fa fa-caret-right" aria-hidden="true"></i></span>
+				<span class="close-preview"><i class="fa fa-times" aria-hidden="true"></i></span>
+			</div>
 		</div>
 	</main>
 

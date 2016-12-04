@@ -9,14 +9,36 @@ imgArray.forEach(function ($image) {
         ev.preventDefault();
         document.querySelector('.zoom-container').parentNode.className = 'preview-container';
         previewImage($image);
+        document.addEventListener('keydown', bindArrows)
     })
 });
+
+
+function bindArrows(ev) {
+    if (ev.keyCode == 39) {
+        previewNextImage();
+    } else if (ev.keyCode == 37) {
+        previewPrevImage()
+    }
+}
 
 
 function previewImage($image) {
     currentIndex = imgArray.indexOf($image);
     setImageBorder($image);
     createImageWidget($image);
+}
+
+
+function previewPrevImage() {
+    var $prevImage = getPrevImage();
+    previewImage($prevImage)
+}
+
+
+function previewNextImage() {
+    var $nextImage = getNextImage();
+    previewImage($nextImage)
 }
 
 
@@ -54,17 +76,16 @@ function getNextImage() {
 
 
 document.querySelector('.arrow-left').addEventListener('click', function(){
-    var $prevImage = getPrevImage();
-    previewImage($prevImage)
+    previewPrevImage();
 });
 
 
 document.querySelector('.arrow-right').addEventListener('click', function(){
-    var $nextImage = getNextImage();
-    previewImage($nextImage)
+    previewNextImage();
 });
 
 
 document.querySelector('.close-preview').addEventListener('click', function(){
     document.querySelector('.zoom-container').parentNode.className = 'empty-preview-container';
+    document.removeEventListener('keydown', bindArrows)
 });

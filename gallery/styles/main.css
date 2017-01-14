@@ -93,3 +93,21 @@ a {
 	cursor: pointer;
 	top: -30px;
 }
+
+@media (max-width: 800px) {
+	.zoom-container {
+		width: 80%;
+	}
+	.zoom-container img {
+		width: 100%;
+		height: auto;
+	}
+	.arrow {
+		font-size: 60px;
+	}
+	.close-preview {
+		font-size: 30px;
+	}
+}
+
+/* TODO: można zmieniać wysokość strzałek względem obrazka*/
